@@ -10,3 +10,11 @@
 저장소 Settings → Pages → Branch 선택 → Save.
 
 > 교과서 원본 PDF는 저작권 문제가 있으니 공개 저장소에 올리지 마세요. 직접 만든 수업 자료 위주로 올리는 것을 권장합니다.
+
+## Firebase Hosting 배포
+1. [Firebase 콘솔](https://console.firebase.google.com)에서 프로젝트를 만들고 Hosting을 시작합니다.
+2. 프로젝트 설정 → 서비스 계정 → **새 비공개 키 생성**으로 JSON 키를 받습니다.
+3. GitHub 저장소 Settings → Secrets and variables → Actions에서
+   - Secrets: `FIREBASE_SERVICE_ACCOUNT` = JSON 키 내용 전체
+   - Variables: `FIREBASE_PROJECT_ID` = 프로젝트 ID
+4. 이 브랜치나 main에 push하면 자동 배포됩니다. 주소: `https://<프로젝트ID>.web.app`
